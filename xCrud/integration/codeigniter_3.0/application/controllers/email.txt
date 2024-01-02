@@ -1,0 +1,45 @@
+Hi,
+
+Unzip and run http://path/xcrud_ci3
+Remember to edit xcrud_config.php - assets\vendor\xcrud
+Please see/help solve these issues. In codeigniter, the major problem is rendering.
+
+
+xcrud demos (pure xcrud demos)
+Subselect and sum row
+-Please see the profit tab calculation
+
+Tabulator Grouping (level 2)
+-nothing rendered
+
+Uploads demo
+-nothing rendered
+
+
+
+
+CodeIgniter side
+=====================
+help troubleshoot the rendering of
+-buttons panel (showing without labels)
+-tabs (only the text shows)
+-groups
+-general look of forms
+
+
+Modal & buttons
+-buttons (zero height/width). Rendering issue, hover shows button title
+
+Highlights
+-field quantityOrdered - are the values supposed to show as the cell is highlighted (This displays same in xcrud demos)
+
+Nested Tables, Nested Tables in Tabs
+-what's the difference? The code is exactly the same too.
+
+Parsley Validation
+-xcrud_config.php a search for "parsley" finds "0" results
+-of course this demo does not work too
+
+Tooltips
+-Not rendering
+

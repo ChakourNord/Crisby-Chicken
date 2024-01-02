@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"name": "Altab Projekt",
+		"path": "."
+	},
+	{
+		"name": "login",
+		"path": "../login"
+	}
+],
+  "settings": {}
+}

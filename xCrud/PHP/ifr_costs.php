@@ -1,12 +1,12 @@
 <?php
 //no in use !!!
 include "../../includes/utils.php";
-if (!$_COOKIE["tokenaudit"]) {
-  if (checkToken()["id_user"] < 1) {
-    header("location: ../../login.php");
-  }
-}
-session_start();
+// if (!$_COOKIE["tokenaudit"]) {
+//   if (checkToken()["id_user"] < 1) {
+//     header("location: ../../login.php");
+//   }
+// }
+// session_start();
 
 // $id = $_SESSION["id_emp"];
 // print_r($_SESSION["id_exe"]);

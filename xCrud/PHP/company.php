@@ -1,11 +1,11 @@
 <?php
-///in use, the company record site
-include "../../includes/utils.php";
-if (!$_COOKIE["tokenaudit"]) {
-  if (checkToken()["id_user"] < 1) {
-    header("location: ../../login.php");
-  }
-}
+// ///in use, the company record site
+// include "../../includes/utils.php";
+// if (!$_COOKIE["tokenaudit"]) {
+//   if (checkToken()["id_user"] < 1) {
+//     header("location: ../../login.php");
+//   }
+// }
 include "../xcrud/xcrud.php";
 $xcrud = Xcrud::get_instance();
 $xcrud->table("companies");

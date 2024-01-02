@@ -1,11 +1,11 @@
 <?php
 //not in use
 include "../../includes/utils.php";
-if (!$_COOKIE["tokenaudit"]) {
-  if (checkToken()["id_user"] < 1) {
-    header("location: ../../login.php");
-  }
-}
+// if (!$_COOKIE["tokenaudit"]) {
+//   if (checkToken()["id_user"] < 1) {
+//     header("location: ../../login.php");
+//   }
+// }
 $id = $_GET["id"];
 include "../xcrud/xcrud.php";
 $xcrud = Xcrud::get_instance();

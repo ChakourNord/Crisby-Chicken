@@ -2,12 +2,12 @@
 
 <?php
 include "../../includes/utils.php";
-if (!$_COOKIE["tokenaudit"]) {
-  if (checkToken()["id_user"] < 1) {
-    header("location: ../../login.php");
-  }
-}
-session_start();
+// if (!$_COOKIE["tokenaudit"]) {
+//   if (checkToken()["id_user"] < 1) {
+//     header("location: ../../login.php");
+//   }
+// }
+// session_start();
 
 require_once "../../includes/utils.php";
 require_once "../../includes/database.php";

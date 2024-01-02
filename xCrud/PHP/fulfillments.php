@@ -1,11 +1,11 @@
 <?php
 //no in use !!!!
-include "../../includes/utils.php";
-if (!$_COOKIE["tokenaudit"]) {
-  if (checkToken()["id_user"] < 1) {
-    header("location: ../../login.php");
-  }
-}
+// include "../../includes/utils.php";
+// if (!$_COOKIE["tokenaudit"]) {
+//   if (checkToken()["id_user"] < 1) {
+//     header("location: ../../login.php");
+//   }
+// }
 if (isset($_GET["add"])) {
   $add = $_GET["add"];
 } else {

@@ -1,12 +1,12 @@
 <?php
 //in use, the users record site manage new user to login
-include "../../includes/utils.php";
-if (!$_COOKIE["tokenaudit"]) {
-  if (checkToken()["id_user"] < 1) {
-    header("location: ../../login.php");
-  }
-}
-session_start();
+ include "../../includes/utils.php";
+// if (!$_COOKIE["tokenaudit"]) {
+//   if (checkToken()["id_user"] < 1) {
+//     header("location: ../../login.php");
+//   }
+// }
+// session_start();
 
 if (isset($_GET["add"])) {
   $add = $_GET["add"];
@@ -18,26 +18,25 @@ $xcrud = Xcrud::get_instance();
 $xcrud->load_view("list", "xcrud_list_view_wo.php");
 $xcrud->load_view("create", "add.php");
 $xcrud->table("users");
-$xcrud->is_edit_modal(true);
-$xcrud->order_by("id", "desc");
-$xcrud->before_insert("crypt_password", "functions.php");
-$xcrud->unset_remove();
-if ($add == true) {
-  $xcrud
+ $xcrud->is_edit_modal(true);
+ $xcrud->order_by("id", "desc");
+ $xcrud->before_insert("crypt_password", "functions.php");
+ $xcrud->unset_remove();
+ if ($add == true) {
+   $xcrud
     //->hide_button("save_return")
-    ->hide_button("save_edit")
-
-    ->hide_button("save_new");
-}
-$xcrud->default_tab("Users");
-$xcrud->is_edit_modal(true);
-$roles = $xcrud->nested_table("roles", "id", "users_roles", "id_user");
-$roles
+     ->hide_button("save_edit")
+     ->hide_button("save_new");
+ }
+  $xcrud->default_tab("Users");
+ $xcrud->is_edit_modal(true);
+ $roles = $xcrud->nested_table("roles", "id", "users_roles", "id_user");
+ $roles
   ->disabled("id_user")
-  ->relation("id_role", "roles", "id", "name")
-  ->fields("id_user,id_role");
-$roles->load_view("list", "xcrud_list_view_wo.php");
-$roles->load_view("edit", "xcrud_detail_view_btn_b.php");
+   ->relation("id_role", "roles", "id", "name")
+   ->fields("id_user,id_role");
+ $roles->load_view("list", "xcrud_list_view_wo.php");
+ $roles->load_view("edit", "xcrud_detail_view_btn_b.php");
 $xcrud->fields(
   "id_company,name,surname,photo_url,email,username,password,is_active"
 );
@@ -46,23 +45,23 @@ $xcrud->columns(
 );
 
 $xcrud
-  ->relation("id_company", "companies", "company_id_number", "company")
+  ->relation("id_company", "companies", "id","company")
   ->disabled("password", "edit");
+//   ->fields("id_fulfillment,id_roles");
+$roles
+ ->columns("id_user,is_active,id_role")
+ ->relation("id_user","users","id","surname");
 
-//   ->fields("id_fulfillment,id_roles+");
-// $roles
-//   ->columns("id_fulfillment,is_active,id_roles")
-//   ->disabled("id_fulfillment");
-// $costs = $xcrud->nested_table(
-//   "costs",
-//   "id",
-//   "fd_fulfillment_costs",
-//   "id_fulfillment"
-// );
-// $costs->fields("id_fulfillment,name,cost,is_active");
-// $costs
-//   ->columns("id_fulfillment,name,cost,is_active")
-//   ->disabled("id_fulfillment");
+$costs = $xcrud->nested_table(
+  "costs",
+  "id",
+  "fd_fulfillment_costs",
+  "id_fulfillment"
+);
+$costs->fields("id_fulfillment,name,cost,is_active");
+$costs
+  ->columns("id_fulfillment,name,cost,is_active")
+  ->disabled("id_fulfillment");
 // $xcrud
 //   ->relation("id_filiale", "filiali", "id", "des_fil")
 //   ->relation("id_fulfillment_type", "fd_fulfillment_types", "id", "names");
@@ -71,12 +70,12 @@ $xcrud
 //   "id,id_filiale,id_fulfillment_type,note,start_date,deadline_value,deadline_period"
 // );
 // $customers = $xcrud->nested_table(
-//   "roles",
+//   "rolessfd",
 //   "",
 //   "customers",
 //   "customerNumber"
 // );
-// $current_date = date("Y-m-d");
+$current_date = date("Y-m-d");
 
 // $xcrud->set_attr("start_date", [
 //   "value" => "$current_date",

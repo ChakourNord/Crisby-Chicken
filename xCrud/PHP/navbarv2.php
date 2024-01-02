@@ -31,10 +31,10 @@
             </li>
 
         </ul>
-        <ul class="navbar-nav">
+        <!-- <ul class="navbar-nav">
             <li class="nav-item" id="logout">
                 <a class="nav-link" href="../../logout.php">Logout</a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </nav>

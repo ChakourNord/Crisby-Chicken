@@ -1,11 +1,11 @@
 <?php
 //include the login securtiy path
-include "../../includes/utils.php";
-if (!$_COOKIE["tokenaudit"]) {
-  if (checkToken()["id_user"] < 1) {
-    header("location: ../../login.php");
-  }
-}
+// include "../../includes/utils.php";
+// if (!$_COOKIE["tokenaudit"]) {
+//   if (checkToken()["id_user"] < 1) {
+//     header("location: ../../login.php");
+//   }
+// }
 include "../xcrud/xcrud.php";
 $xcrud = Xcrud::get_instance();
 Xcrud_config::$search_on_typing = true;

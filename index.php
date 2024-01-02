@@ -1,2 +1,2 @@
 <?php
-header("D:/xampp/htdocs/Crisby-Chicken/xCrud/test.php");
+header("location: ./xCrud/PHP/TEST.php");

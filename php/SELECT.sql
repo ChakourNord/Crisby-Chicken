@@ -1,0 +1,10 @@
+SELECT
+    ID,
+    COMPANY_ID_NUMBER,
+    "NAME",
+    SURNAME,
+    GENDER
+FROM
+    EMPLOYEES
+WHERE
+    SURNAME = 'bouraima'
